@@ -1,0 +1,118 @@
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.welcome-modal {
+  background: linear-gradient(135deg, #ffffff, #f0fdf4);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 2px solid #22c55e;
+}
+
+.app.dark-mode .welcome-modal {
+  background: linear-gradient(135deg, #1a0a2e, #2d1b4e);
+  border-color: #a855f7;
+}
+
+.welcome-content {
+  text-align: center;
+}
+
+.welcome-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #166534;
+}
+
+.app.dark-mode .welcome-content h1 {
+  color: #d8b4fe;
+}
+
+.welcome-message {
+  text-align: left;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.welcome-message p {
+  margin-bottom: 15px;
+  color: #374151;
+}
+
+.app.dark-mode .welcome-message p {
+  color: #d1d5db;
+}
+
+.welcome-message strong {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.welcome-message ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.welcome-message li {
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.app.dark-mode .welcome-message li {
+  color: #d1d5db;
+}
+
+.accept-button {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+
+.accept-button:hover {
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
+  transform: translateY(-2px);
+}
+
+.app.dark-mode .accept-button {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+.app.dark-mode .accept-button:hover {
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome-modal {
+    padding: 30px 20px;
+  }
+  
+  .welcome-content h1 {
+    font-size: 2rem;
+  }
+  
+  .welcome-message {
+    font-size: 0.95rem;
+  }
+}

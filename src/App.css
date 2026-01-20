@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app.light-mode {
+  background-color: #f0fdf4;
+  color: #166534;
+}
+
+.app.dark-mode {
+  background-color: #1a0a2e;
+  color: #d8b4fe;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.back-to-top:hover {
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
 }
 
-@keyframes App-logo-spin {
+.app.dark-mode .back-to-top {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+.app.dark-mode .back-to-top:hover {
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+}
+
+/* Scroll Animations */
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.section-fade-in {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Section Glow Effect */
+.section-glow {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.app.light-mode .section-glow:hover {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+.app.dark-mode .section-glow:hover {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
 }

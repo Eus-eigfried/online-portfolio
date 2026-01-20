@@ -1,0 +1,250 @@
+.resume-section {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resume-title-box {
+  background: linear-gradient(135deg, #ffffff, #f0fdf4);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 2px solid #22c55e;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.app.dark-mode .resume-title-box {
+  background: linear-gradient(135deg, #2d1b4e, #1a0a2e);
+  border-color: #a855f7;
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #166534;
+}
+
+.app.dark-mode .section-title {
+  color: #d8b4fe;
+}
+
+.resume-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.resume-card {
+  background: linear-gradient(135deg, #ffffff, #f0fdf4);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  border: 2px solid #22c55e;
+  transition: all 0.3s ease;
+}
+
+.app.dark-mode .resume-card {
+  background: linear-gradient(135deg, #2d1b4e, #1a0a2e);
+  border-color: #a855f7;
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
+}
+
+.resume-preview {
+  margin-bottom: 20px;
+}
+
+.preview-placeholder {
+  height: 300px;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #22c55e;
+  border: 2px dashed #22c55e;
+  overflow: hidden;
+  position: relative;
+}
+
+.resume-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallback-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app.dark-mode .preview-placeholder {
+  background: linear-gradient(135deg, #1a0a2e, #2d1b4e);
+  border-color: #a855f7;
+  color: #a855f7;
+}
+
+.preview-label {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 10;
+}
+
+.view-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+.view-button:hover {
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
+}
+
+.app.dark-mode .view-button {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.app.dark-mode .view-button:hover {
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.app.dark-mode .modal-content {
+  background: #1a0a2e;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 2px solid #22c55e;
+}
+
+.app.dark-mode .modal-header {
+  border-bottom-color: #a855f7;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #166534;
+}
+
+.app.dark-mode .modal-header h3 {
+  color: #d8b4fe;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  flex: 1;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 70vh;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    width: 95vw;
+    max-height: 85vh;
+  }
+  
+  .modal-body {
+    padding: 10px;
+  }
+  
+  .pdf-viewer {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-card {
+    padding: 20px;
+  }
+  
+  .preview-placeholder {
+    height: 200px;
+  }
+}

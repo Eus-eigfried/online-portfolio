@@ -1,0 +1,135 @@
+.hobbies-section {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hobbies-title-box {
+  background: linear-gradient(135deg, #ffffff, #f0fdf4);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 2px solid #22c55e;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.app.dark-mode .hobbies-title-box {
+  background: linear-gradient(135deg, #2d1b4e, #1a0a2e);
+  border-color: #a855f7;
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #166534;
+}
+
+.app.dark-mode .section-title {
+  color: #d8b4fe;
+}
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.hobby-card {
+  background: linear-gradient(135deg, #ffffff, #f0fdf4);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  border: 2px solid #22c55e;
+  transition: all 0.3s ease;
+  align-items: flex-start;
+}
+
+.app.dark-mode .hobby-card {
+  background: linear-gradient(135deg, #2d1b4e, #1a0a2e);
+  border-color: #a855f7;
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
+}
+
+.hobby-icon {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+
+.app.dark-mode .hobby-icon {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+.hobby-content {
+  flex: 1;
+}
+
+.hobby-name {
+  font-size: 1.5rem;
+  color: #166534;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.app.dark-mode .hobby-name {
+  color: #d8b4fe;
+}
+
+.hobby-description {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.8;
+}
+
+.app.dark-mode .hobby-description {
+  color: #d1d5db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hobby-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hobby-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hobby-card {
+    padding: 25px 20px;
+  }
+  
+  .hobby-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .hobby-name {
+    font-size: 1.3rem;
+  }
+}
