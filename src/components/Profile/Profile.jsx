@@ -29,7 +29,7 @@ const Profile = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <img
-                  src="/images/profile/Kyle.jpg"
+                  src={`${process.env.PUBLIC_URL}/images/profile/Kyle.jpg`}
                   alt={profileData.fullName}
                   className="profile-image"
                   onError={(e) => {

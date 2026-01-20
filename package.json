@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "online-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,16 +7,16 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
     "@testing-library/user-event": "^13.5.0",
-    "framer-motion": "^12.26.2",
+    "framer-motion": "^12.27.2",
     "lucide-react": "^0.562.0",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
-    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "react-scripts": "^5.0.1"
   },
   "homepage": "https://eus-eigfried.github.io/online-portfolio",
   "scripts": {

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { educationData } from '../../data/educationData';
@@ -44,13 +43,21 @@ const Education = () => {
               transition={{ delay: 0.3 + index * 0.15 }}
               whileHover={{ scale: 1.05, y: -10 }}
             >
-              <div className="education-image">
+              <div className="education-icon">
                 <img
-                  src={item.image}
-                  className="image"
+                  src={`${process.env.PUBLIC_URL}/images/education/education-${index + 1}.png`}
+                  alt={item.name}
+                  className="education-image"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.querySelector('.fallback-icon').style.display = 'flex';
+                  }}
                 />
-              </div>       
-
+                <div className="fallback-icon" style={{ display: 'none' }}>
+                  {getIcon(item.icon, 50)}
+                </div>
+              </div>
+              
               <div className="education-content">
                 <span className="education-level">{item.level}</span>
                 <h3 className="education-name">{item.name}</h3>

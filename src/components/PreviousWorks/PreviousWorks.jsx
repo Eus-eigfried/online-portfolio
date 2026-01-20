@@ -51,7 +51,7 @@ const PreviousWorks = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <img
-                    src={`/images/projects/project-${index + 1}.png`}
+                    src={`${process.env.PUBLIC_URL}/images/projects/project-${index + 1}.png`}
                     alt={work.title}
                     className="preview-img"
                     onError={(e) => {

@@ -45,7 +45,7 @@ const WorkExperience = () => {
             >
               <div className="work-cover">
                 <img
-                  src={`/images/work/work-${index + 1}.jpg`}
+                  src={`${process.env.PUBLIC_URL}/images/work/work-${index + 1}.jpg`}
                   alt={`${work.company} - ${work.title}`}
                   className="work-cover-image"
                   onError={(e) => {

@@ -52,7 +52,7 @@ const ResumeSection = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <img
-                    src={`/images/resumes/resume-${index + 1}.png`}
+                    src={`${process.env.PUBLIC_URL}/images/resumes/resume-${index + 1}.png`}
                     alt={resume.type}
                     className="resume-preview-image"
                     onError={(e) => {
