@@ -1,5 +1,5 @@
 {
-  "name": "online-portfolio",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,11 +12,11 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-icons": "^5.5.0",
+    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "react-scripts": "^0.0.0"
+    "gh-pages": "^6.3.0"
   },
   "homepage": "https://eus-eigfried.github.io/online-portfolio",
   "scripts": {
