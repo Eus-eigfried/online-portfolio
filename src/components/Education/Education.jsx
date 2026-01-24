@@ -7,6 +7,7 @@ import './Education.css';
 const Education = () => {
   return (
     <motion.section
+      id="education"
       className="education-section section-glow"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}

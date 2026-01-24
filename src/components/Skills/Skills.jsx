@@ -7,6 +7,7 @@ import './Skills.css';
 const Skills = () => {
   return (
     <motion.section
+      id="skills"
       className="skills-section section-glow"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}

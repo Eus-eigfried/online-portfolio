@@ -7,6 +7,7 @@ import './Profile.css';
 const Profile = () => {
   return (
     <motion.section
+      id="profile"
       className="profile-section section-glow"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}

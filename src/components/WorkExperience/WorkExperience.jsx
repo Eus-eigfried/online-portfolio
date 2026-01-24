@@ -7,6 +7,7 @@ import './WorkExperience.css';
 const WorkExperience = () => {
   return (
     <motion.section
+      id="work"
       className="work-experience-section section-glow"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +16,7 @@ const WorkExperience = () => {
     >
       <div className="container">
         <motion.div
-          className="works-title-box"
+          className="work-title-box"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

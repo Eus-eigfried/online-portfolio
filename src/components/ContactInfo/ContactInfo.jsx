@@ -7,6 +7,7 @@ import './ContactInfo.css';
 const ContactInfo = () => {
   return (
     <motion.section
+      id="contact"
       className="contact-section section-glow"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -15,11 +16,11 @@ const ContactInfo = () => {
     >
       <div className="container">
         <motion.div
-                  className="works-title-box"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
+          className="contact-title-box"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
         >
           <motion.h2
             className="section-title"

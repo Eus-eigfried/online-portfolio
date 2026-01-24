@@ -1,4 +1,4 @@
-.previous-works-section {
+.projects-section {
   padding: 60px 20px;
 }
 
@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 
-.works-title-box {
+.projects-title-box {
   background: linear-gradient(135deg, #ffffff, #f0fdf4);
   border-radius: 20px;
   padding: 30px;
@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-.app.dark-mode .works-title-box {
+.app.dark-mode .projects-title-box {
   background: linear-gradient(135deg, #2d1b4e, #1a0a2e);
   border-color: #a855f7;
   box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
@@ -33,13 +33,13 @@
   color: #d8b4fe;
 }
 
-.works-grid {
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
-.work-card {
+.project-card {
   background: linear-gradient(135deg, #ffffff, #f0fdf4);
   border-radius: 20px;
   padding: 25px;
@@ -50,13 +50,13 @@
   transition: all 0.3s ease;
 }
 
-.app.dark-mode .work-card {
+.app.dark-mode .project-card {
   background: linear-gradient(135deg, #2d1b4e, #1a0a2e);
   border-color: #a855f7;
   box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
 }
 
-.work-preview {
+.project-preview {
   margin-bottom: 20px;
 }
 
@@ -96,14 +96,14 @@
   color: #a855f7;
 }
 
-.work-info {
+.project-info {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.work-title {
+.project-title {
   font-size: 1.3rem;
   color: #166534;
   margin: 0;
@@ -111,7 +111,7 @@
   text-align: center;
 }
 
-.app.dark-mode .work-title {
+.app.dark-mode .project-title {
   color: #d8b4fe;
 }
 
@@ -158,7 +158,7 @@
   padding: 20px;
 }
 
-.work-modal {
+.project-modal {
   background: white;
   border-radius: 20px;
   max-width: 700px;
@@ -169,7 +169,7 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.app.dark-mode .work-modal {
+.app.dark-mode .project-modal {
   background: #1a0a2e;
 }
 
@@ -277,11 +277,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .works-grid {
+  .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
   
-  .work-modal {
+  .project-modal {
     max-height: 85vh;
   }
   
@@ -299,7 +299,7 @@
 }
 
 @media (max-width: 480px) {
-  .works-title-box {
+  .projects-title-box {
     padding: 20px;
   }
   
@@ -307,11 +307,11 @@
     font-size: 2rem;
   }
   
-  .works-grid {
+  .projects-grid {
     grid-template-columns: 1fr;
   }
   
-  .work-card {
+  .project-card {
     padding: 20px;
   }
   

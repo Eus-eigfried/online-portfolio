@@ -10,7 +10,7 @@ import Education from './components/Education';
 import WorkExperience from './components/WorkExperience';
 import Skills from './components/Skills';
 import Hobbies from './components/Hobbies';
-import PreviousWorks from './components/PreviousWorks';
+import Projects from './components/Projects';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -116,7 +116,7 @@ function AppContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <PreviousWorks />
+              <Projects />
             </motion.div>
           </motion.main>
 

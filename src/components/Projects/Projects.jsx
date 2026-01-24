@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projectsData } from '../../data/projectsData';
 import { getIcon } from '../../utils/iconUtils';
-import './PreviousWorks.css';
+import './Projects.css';
 
-const PreviousWorks = () => {
-  const [selectedWork, setSelectedWork] = useState(null);
+const Projects = () => {
+  const [selectedProjects, setSelectedProjects] = useState(null);
 
   return (
     <motion.section
-      className="previous-works-section"
+      id="projects"
+      className="projects-section"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -17,7 +18,7 @@ const PreviousWorks = () => {
     >
       <div className="container">
         <motion.div
-          className="works-title-box"
+          className="projects-title-box"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -29,22 +30,22 @@ const PreviousWorks = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            Previous Works
+            Projects
           </motion.h2>
         </motion.div>
         
-        <div className="works-grid">
-          {projectsData.map((work, index) => (
+        <div className="projects-grid">
+          {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              className="work-card"
+              className="project-card"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 + index * 0.15 }}
               whileHover={{ scale: 1.05, y: -10 }}
             >
-              <div className="work-preview">
+              <div className="project-preview">
                 <motion.div
                   className="preview-image"
                   whileHover={{ scale: 1.05 }}
@@ -52,7 +53,7 @@ const PreviousWorks = () => {
                 >
                   <img
                     src={`${process.env.PUBLIC_URL}/images/projects/project-${index + 1}.png`}
-                    alt={work.title}
+                    alt={project.title}
                     className="preview-img"
                     onError={(e) => {
                       e.target.style.display = 'none';
@@ -65,11 +66,11 @@ const PreviousWorks = () => {
                 </motion.div>
               </div>
               
-              <div className="work-info">
-                <h3 className="work-title">{work.title}</h3>
+              <div className="project-info">
+                <h3 className="project-title">{project.title}</h3>
                 <motion.button
                   className="view-project-button"
-                  onClick={() => setSelectedWork(work)}
+                  onClick={() => setSelectedProjects(project)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -82,26 +83,26 @@ const PreviousWorks = () => {
       </div>
 
       <AnimatePresence>
-        {selectedWork && (
+        {selectedProjects && (
           <motion.div
             className="modal-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedWork(null)}
+            onClick={() => setSelectedProjects(null)}
           >
             <motion.div
-              className="work-modal"
+              className="project-modal"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="modal-header">
-                <h3>{selectedWork.title}</h3>
+                <h3>{selectedProjects.title}</h3>
                 <motion.button
                   className="close-button"
-                  onClick={() => setSelectedWork(null)}
+                  onClick={() => setSelectedProjects(null)}
                   whileHover={{ rotate: 90, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -112,19 +113,19 @@ const PreviousWorks = () => {
               <div className="modal-content">
                 <div className="modal-section">
                   <h4>Description</h4>
-                  <p>{selectedWork.description}</p>
+                  <p>{selectedProjects.description}</p>
                 </div>
                 
                 <div className="modal-section">
                   <h4>What I Learned</h4>
-                  <p>{selectedWork.learned}</p>
+                  <p>{selectedProjects.learned}</p>
                 </div>
                 
-                {selectedWork.link && (
+                {selectedProjects.link && (
                   <div className="modal-section">
                     <h4>Link to Project</h4>
                     <motion.a
-                      href={selectedWork.link}
+                      href={selectedProjects.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="project-link-button"
@@ -145,4 +146,4 @@ const PreviousWorks = () => {
   );
 };
 
-export default PreviousWorks;
+export default Projects;
