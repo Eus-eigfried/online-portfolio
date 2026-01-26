@@ -7,12 +7,12 @@ export const contactData = [
   },
   {
     type: "mapPin",
-    label: "Address 1",
+    label: "Home Address",
     value: "Purok 4 Brgy. Concepcion San Pablo City, Laguna, Philippines 4000"
   },
   {
     type: "mapPin",
-    label: "Address 2",
+    label: "Temporary Address",
     value: "64 Kapayakan St. Karangalan Village Brgy. Mangahan Pasig City, Metro Manila, Philippines"
   },
   {

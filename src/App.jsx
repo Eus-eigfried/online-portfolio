@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
+import { getIcon } from './utils/iconUtils';
 import Header from './components/Header';
 import WelcomeModal from './components/WelcomeModal';
+import IntroSlideshow from './components/IntroSlideshow';
 import Profile from './components/Profile';
 import ResumeSection from './components/ResumeSection';
 import ContactInfo from './components/ContactInfo';
@@ -17,6 +19,7 @@ import './App.css';
 function AppContent() {
   const { isDarkMode } = useTheme();
   const [showWelcome, setShowWelcome] = useState(true);
+  const [showIntro, setShowIntro] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
@@ -32,13 +35,26 @@ function AppContent() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleWelcomeClose = () => {
+    setShowWelcome(false);
+    setShowIntro(true);
+  };
+
+  const handleIntroComplete = () => {
+    setShowIntro(false);
+  };
+
   return (
     <div className={`app ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <AnimatePresence>
-        {showWelcome && <WelcomeModal onClose={() => setShowWelcome(false)} />}
+        {showWelcome && <WelcomeModal onClose={handleWelcomeClose} />}
       </AnimatePresence>
 
-      {!showWelcome && (
+      <AnimatePresence>
+        {showIntro && <IntroSlideshow onComplete={handleIntroComplete} />}
+      </AnimatePresence>
+
+      {!showWelcome && !showIntro && (
         <>
           <Header />
           
@@ -131,7 +147,7 @@ function AppContent() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              ↑
+              {getIcon('arrowUp', 24)}
             </motion.button>
           )}
         </>

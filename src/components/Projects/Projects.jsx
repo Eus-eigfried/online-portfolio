@@ -5,7 +5,7 @@ import { getIcon } from '../../utils/iconUtils';
 import './Projects.css';
 
 const Projects = () => {
-  const [selectedProjects, setSelectedProjects] = useState(null);
+  const [selectedWork, setSelectedWork] = useState(null);
 
   return (
     <motion.section
@@ -70,7 +70,7 @@ const Projects = () => {
                 <h3 className="project-title">{project.title}</h3>
                 <motion.button
                   className="view-project-button"
-                  onClick={() => setSelectedProjects(project)}
+                  onClick={() => setSelectedWork(project)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -83,13 +83,13 @@ const Projects = () => {
       </div>
 
       <AnimatePresence>
-        {selectedProjects && (
+        {selectedWork && (
           <motion.div
             className="modal-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedProjects(null)}
+            onClick={() => setSelectedWork(null)}
           >
             <motion.div
               className="project-modal"
@@ -99,10 +99,10 @@ const Projects = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="modal-header">
-                <h3>{selectedProjects.title}</h3>
+                <h3>{selectedWork.title}</h3>
                 <motion.button
                   className="close-button"
-                  onClick={() => setSelectedProjects(null)}
+                  onClick={() => setSelectedWork(null)}
                   whileHover={{ rotate: 90, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -113,19 +113,19 @@ const Projects = () => {
               <div className="modal-content">
                 <div className="modal-section">
                   <h4>Description</h4>
-                  <p>{selectedProjects.description}</p>
+                  <p>{selectedWork.description}</p>
                 </div>
                 
                 <div className="modal-section">
                   <h4>What I Learned</h4>
-                  <p>{selectedProjects.learned}</p>
+                  <p>{selectedWork.learned}</p>
                 </div>
                 
-                {selectedProjects.link && (
+                {selectedWork.link && (
                   <div className="modal-section">
                     <h4>Link to Project</h4>
                     <motion.a
-                      href={selectedProjects.link}
+                      href={selectedWork.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="project-link-button"

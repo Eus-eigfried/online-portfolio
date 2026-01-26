@@ -29,52 +29,70 @@
   font-weight: 700;
   color: #166534;
   text-align: center;
+  flex: 1;
 }
 
 .app.dark-mode .header-title {
   color: #d8b4fe;
 }
 
-.header-actions {
+.nav-toggle {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
-  gap: 15px;
-  opacity: 0;
-  visibility: hidden;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
   transition: all 0.3s ease;
-  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.nav-toggle:hover {
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
+}
+
+.app.dark-mode .nav-toggle {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.app.dark-mode .nav-toggle:hover {
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+}
+
+.header-nav-dropdown {
+  position: absolute;
   top: 100%;
-  margin-top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(240, 253, 244, 0.98);
-  padding: 12px 20px;
+  padding: 15px 20px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   border: 2px solid #22c55e;
   z-index: 1000;
+  margin-top: 10px;
 }
 
-.app.dark-mode .header-actions {
+.app.dark-mode .header-nav-dropdown {
   background: rgba(26, 10, 46, 0.98);
   border-color: #a855f7;
 }
 
-.header:hover .header-actions {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  margin-top: 15px;
-}
-
-.section-icons {
+.nav-icons {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   align-items: center;
 }
 
-.section-icon-wrapper {
+.nav-icon-wrapper {
   position: relative;
   cursor: pointer;
   display: flex;
@@ -82,9 +100,9 @@
   justify-content: center;
 }
 
-.section-icon-box {
-  width: 40px;
-  height: 40px;
+.nav-icon-box {
+  width: 45px;
+  height: 45px;
   background: linear-gradient(135deg, #22c55e, #16a34a);
   border-radius: 10px;
   display: flex;
@@ -96,20 +114,20 @@
   position: relative;
 }
 
-.app.dark-mode .section-icon-box {
+.app.dark-mode .nav-icon-box {
   background: linear-gradient(135deg, #a855f7, #7c3aed);
   box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
 }
 
-.section-icon-box:hover {
+.nav-icon-box:hover {
   box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
 }
 
-.app.dark-mode .section-icon-box:hover {
+.app.dark-mode .nav-icon-box:hover {
   box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
 }
 
-.section-tooltip {
+.nav-tooltip {
   position: absolute;
   bottom: -40px;
   left: 50%;
@@ -128,19 +146,19 @@
   box-shadow: 0 4px 15px rgba(22, 101, 52, 0.3);
 }
 
-.app.dark-mode .section-tooltip {
+.app.dark-mode .nav-tooltip {
   background: #d8b4fe;
   color: #1a0a2e;
   box-shadow: 0 4px 15px rgba(216, 180, 254, 0.3);
 }
 
-.section-icon-wrapper:hover .section-tooltip {
+.nav-icon-wrapper:hover .nav-tooltip {
   opacity: 1;
   visibility: visible;
   bottom: -45px;
 }
 
-.section-tooltip::before {
+.nav-tooltip::before {
   content: '';
   position: absolute;
   top: -6px;
@@ -151,12 +169,12 @@
   border-bottom: 6px solid #166534;
 }
 
-.app.dark-mode .section-tooltip::before {
+.app.dark-mode .nav-tooltip::before {
   border-bottom-color: #d8b4fe;
 }
 
 .theme-toggle {
-  position: right;
+  position: absolute;
   right: 0;
   background: linear-gradient(135deg, #22c55e, #16a34a);
   border: none;
@@ -171,9 +189,6 @@
   box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
   transition: all 0.3s ease;
   flex-shrink: 0;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
 }
 
 .theme-toggle:hover {
@@ -191,7 +206,7 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .header:hover .header-actions {
+  .header-nav-dropdown {
     display: none;
   }
 }
@@ -205,6 +220,7 @@
     font-size: 1.2rem;
   }
   
+  .nav-toggle,
   .theme-toggle {
     width: 40px;
     height: 40px;
@@ -216,6 +232,7 @@
     font-size: 1rem;
   }
   
+  .nav-toggle,
   .theme-toggle {
     width: 35px;
     height: 35px;
